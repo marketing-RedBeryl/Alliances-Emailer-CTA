@@ -34,6 +34,15 @@ Finally, link the new month so users can find it.
 4. Update the `href="./may-2026/"`, the month name text, and the offer count.
 5. Repeat this process for `black/index.html`.
 
+## 🚀 Deep-linking to Sections
+
+You can share a URL that automatically opens a specific partner's section. Simply append the partner's `id` to the end of the URL with a `#`.
+
+**Example:**
+`https://yourdomain.com/red/april-2026/#partner-ekaa`
+
+The page will load, identify the section with `id="partner-ekaa"`, and automatically expand it for the user.
+
 
 ---
 
