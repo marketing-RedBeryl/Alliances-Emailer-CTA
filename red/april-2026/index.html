@@ -511,14 +511,31 @@
           // Haptic feedback on supported devices
           if (navigator.vibrate) navigator.vibrate(10);
 
-          // Smooth scroll — position the card header at the top, below the sticky header
+          // Use a ResizeObserver instead of a fixed setTimeout
+          // to wait for the DOM to settle (like closing other cards) before scrolling.
+          let scrollTimeout;
+          let obs = new ResizeObserver(() => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+              obs.disconnect(); // Stop observing once settled
+              const headerElUpdated = document.getElementById('site-header');
+              const currentHeaderHeight = headerElUpdated ? headerElUpdated.offsetHeight : 72;
+              const cardTop = card.getBoundingClientRect().top + window.scrollY;
+              
+              window.scrollTo({
+                top: cardTop - currentHeaderHeight - 16,
+                behavior: 'smooth'
+              });
+            }, 50); // Small debounce to wait for layout shifts to pause
+          });
+
+          // Begin observing the body for resizing
+          obs.observe(document.body);
+
+          // Fallback if the resize observer doesn't trigger
           setTimeout(() => {
-            const cardTop = card.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({
-              top: cardTop - headerHeight - 12,
-              behavior: 'smooth'
-            });
-          }, 120);
+             obs.disconnect();
+          }, 600);
         }
       });
 
