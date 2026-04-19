@@ -761,69 +761,7 @@ button {
   }
 }
 
-/* ---------- Dark mode support (optional) ---------- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --rb-gray-100: #1A1A1A;
-    --rb-gray-200: #2C2C2C;
-    --rb-gray-300: #444;
-    --rb-gray-400: #888;
-    --rb-gray-500: #AAA;
-    --rb-gray-600: #CCC;
-    --rb-gray-700: #EEE;
-    --rb-white: #111;
-    --shadow-card: 0 2px 12px rgba(0,0,0,0.3);
-    --shadow-card-hover: 0 8px 32px rgba(0,0,0,0.4);
-    --shadow-elevated: 0 12px 48px rgba(0,0,0,0.5);
-  }
 
-  body {
-    background-color: #111;
-    color: #EEE;
-  }
-
-  .site-header {
-    background: rgba(17, 17, 17, 0.88);
-    border-bottom-color: rgba(255, 255, 255, 0.06);
-  }
-
-  .logo-text {
-    color: #EEE;
-  }
-
-  .partner-card,
-  .month-card {
-    background: #1E1E1E;
-  }
-
-  .partner-header:hover {
-    background: rgba(255, 255, 255, 0.03);
-  }
-
-  .partner-chevron {
-    background: #2A2A2A;
-  }
-
-  .partner-card.open .partner-chevron {
-    background: var(--rb-red-glow);
-  }
-
-  .month-card-arrow {
-    background: #2A2A2A;
-  }
-
-  .site-footer {
-    border-top-color: rgba(255, 255, 255, 0.06);
-  }
-
-  .badge--location {
-    background: #2A2A2A;
-  }
-
-  .badge--offers {
-    background: rgba(198, 40, 40, 0.15);
-  }
-}
 
 /* ---------- iOS safe areas ---------- */
 @supports (padding: max(0px)) {
