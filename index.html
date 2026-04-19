@@ -13,7 +13,7 @@
     /* Landing-specific styles */
     .landing-hero {
       text-align: center;
-      padding: var(--space-10) var(--space-4) var(--space-8);
+      padding: var(--space-10) var(--space-4) var(--space-6);
     }
 
     .landing-logo {
@@ -22,7 +22,10 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       color: var(--rb-black);
-      margin-bottom: var(--space-2);
+      margin-bottom: var(--space-3);
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fade-up 700ms var(--ease-out-expo) 100ms both;
     }
 
     .landing-logo .logo-red {
@@ -35,6 +38,9 @@
       max-width: 300px;
       margin: 0 auto;
       line-height: 1.6;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fade-up 700ms var(--ease-out-expo) 250ms both;
     }
 
     .landing-divider {
@@ -43,13 +49,27 @@
       background: linear-gradient(90deg, var(--rb-red), var(--rb-gold));
       margin: var(--space-7) auto;
       border-radius: 2px;
+      opacity: 0;
+      animation: fade-up 700ms var(--ease-out-expo) 400ms both;
+    }
+
+    .tier-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rb-gray-400);
+      margin-bottom: var(--space-4);
+      text-align: center;
+      opacity: 0;
+      animation: fade-up 700ms var(--ease-out-expo) 450ms both;
     }
 
     .tier-cards {
       display: flex;
       flex-direction: column;
       gap: var(--space-4);
-      padding-bottom: calc(var(--space-10) + var(--safe-area-bottom));
+      padding-bottom: var(--space-6);
     }
 
     .tier-card {
@@ -57,12 +77,18 @@
       align-items: center;
       justify-content: space-between;
       padding: var(--space-6);
-      border-radius: var(--radius-lg);
-      min-height: 100px;
+      border-radius: var(--radius-xl);
+      min-height: 110px;
       transition: all var(--transition-fast);
       position: relative;
       overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fade-up 600ms var(--ease-out-expo) both;
     }
+
+    .tier-card:nth-child(1) { animation-delay: 500ms; }
+    .tier-card:nth-child(2) { animation-delay: 620ms; }
 
     .tier-card::before {
       content: '';
@@ -78,13 +104,13 @@
 
     /* Red tier card */
     .tier-card--red {
-      background: linear-gradient(135deg, #C62828, #8E0000);
+      background: linear-gradient(135deg, #C62828 0%, #8E0000 100%);
       color: white;
       box-shadow: 0 8px 32px rgba(198, 40, 40, 0.25);
     }
 
     .tier-card--red::before {
-      background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
     }
 
     .tier-card--red:hover::before {
@@ -93,13 +119,13 @@
 
     /* Black tier card */
     .tier-card--black {
-      background: linear-gradient(135deg, #2C2C2C, #111);
+      background: linear-gradient(135deg, #2C2C2C 0%, #111 100%);
       color: white;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
 
     .tier-card--black::before {
-      background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent);
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), transparent);
     }
 
     .tier-card--black:hover::before {
@@ -128,19 +154,20 @@
     }
 
     .tier-card-arrow {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.15);
       flex-shrink: 0;
-      transition: transform var(--transition-fast);
+      transition: transform var(--transition-fast), background var(--transition-fast);
     }
 
     .tier-card:hover .tier-card-arrow {
       transform: translateX(4px);
+      background: rgba(255, 255, 255, 0.22);
     }
 
     .tier-card-arrow svg {
@@ -155,15 +182,17 @@
 
     .landing-footer-note {
       text-align: center;
-      padding: var(--space-6) var(--space-4) 0;
+      padding: var(--space-4) var(--space-4) 0;
       font-size: 0.75rem;
       color: var(--rb-gray-300);
       line-height: 1.5;
+      opacity: 0;
+      animation: fade-up 700ms var(--ease-out-expo) 750ms both;
     }
 
     @media (hover: none) and (pointer: coarse) {
       .tier-card:hover::before { opacity: 0; }
-      .tier-card:hover .tier-card-arrow { transform: none; }
+      .tier-card:hover .tier-card-arrow { transform: none; background: rgba(255,255,255,0.15); }
     }
   </style>
 </head>
@@ -181,9 +210,10 @@
       </section>
 
       <!-- Tier Selection -->
+      <p class="tier-label">Select your tier</p>
       <section class="tier-cards" id="tier-cards">
 
-        <a href="./red/" class="tier-card tier-card--red animate-in" id="select-red">
+        <a href="./red/" class="tier-card tier-card--red" id="select-red">
           <div class="tier-card-left">
             <span class="tier-card-title">Red Member</span>
             <span class="tier-card-subtitle">Premium partner privileges</span>
@@ -195,7 +225,7 @@
           </div>
         </a>
 
-        <a href="./black/" class="tier-card tier-card--black animate-in" id="select-black">
+        <a href="./black/" class="tier-card tier-card--black" id="select-black">
           <div class="tier-card-left">
             <span class="tier-card-title">Black Member</span>
             <span class="tier-card-subtitle">Elevated lifestyle experiences</span>

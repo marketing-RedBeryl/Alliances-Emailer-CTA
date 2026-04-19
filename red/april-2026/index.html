@@ -46,6 +46,9 @@
         <div class="hero-divider"></div>
       </section>
 
+      <!-- Partner count -->
+      <p class="partner-count"><strong>7</strong> partner experiences this month</p>
+
       <!-- Partners Accordion -->
       <section class="partners-list" id="partners-list">
 
@@ -486,6 +489,9 @@
 
   <script>
     /* ── Accordion logic ── */
+    const headerEl = document.getElementById('site-header');
+    const headerHeight = headerEl ? headerEl.offsetHeight : 72;
+
     document.querySelectorAll('.partner-header').forEach(header => {
       header.addEventListener('click', () => {
         const card = header.closest('.partner-card');
@@ -502,10 +508,17 @@
           card.classList.add('open');
           header.setAttribute('aria-expanded', 'true');
 
-          // Smooth scroll into view on mobile
+          // Haptic feedback on supported devices
+          if (navigator.vibrate) navigator.vibrate(10);
+
+          // Smooth scroll — position the card header at the top, below the sticky header
           setTimeout(() => {
-            card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }, 100);
+            const cardTop = card.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+              top: cardTop - headerHeight - 12,
+              behavior: 'smooth'
+            });
+          }, 120);
         }
       });
 
@@ -518,18 +531,43 @@
       });
     });
 
+    /* ── Scroll-triggered reveal ── */
+    (function () {
+      const cards = document.querySelectorAll('.partner-card');
+      // Remove animate-in and add reveal class for scroll-triggered animation
+      cards.forEach(card => {
+        card.classList.remove('animate-in');
+        card.classList.add('reveal');
+      });
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      cards.forEach((card, i) => {
+        card.style.transitionDelay = `${i * 80}ms`;
+        revealObserver.observe(card);
+      });
+    })();
+
     /* ── Deep-link handling ── */
     window.addEventListener('load', () => {
       const hash = window.location.hash;
       if (hash) {
         const targetCard = document.querySelector(hash);
         if (targetCard && targetCard.classList.contains('partner-card')) {
+          // Ensure it's visible first
+          targetCard.classList.add('visible');
           const header = targetCard.querySelector('.partner-header');
           if (header) {
-            // Wait slightly for entrance animations to settle
             setTimeout(() => {
               header.click();
-            }, 300);
+            }, 400);
           }
         }
       }
@@ -552,13 +590,12 @@
 
     /* ── Sticky header shadow ── */
     (function () {
-      const header = document.getElementById('site-header');
       const sentinel = document.createElement('div');
       sentinel.style.height = '1px';
       document.body.prepend(sentinel);
 
       const observer = new IntersectionObserver(
-        ([e]) => header.classList.toggle('scrolled', !e.isIntersecting),
+        ([e]) => headerEl.classList.toggle('scrolled', !e.isIntersecting),
         { threshold: [1], rootMargin: '-1px 0px 0px 0px' }
       );
       observer.observe(sentinel);
