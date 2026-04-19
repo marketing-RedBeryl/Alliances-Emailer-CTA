@@ -4,35 +4,35 @@
    ==================================== */
 
 /* ---------- Google Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
   /* Brand palette */
-  --rb-red: #C62828;
-  --rb-red-light: #EF5350;
-  --rb-red-dark: #8E0000;
-  --rb-red-glow: rgba(198, 40, 40, 0.25);
-  --rb-red-subtle: rgba(198, 40, 40, 0.06);
+  --rb-red: #981b23;
+  --rb-red-light: #b82e37;
+  --rb-red-dark: #6e1319;
+  --rb-red-glow: rgba(152, 27, 35, 0.25);
+  --rb-red-subtle: rgba(152, 27, 35, 0.06);
 
-  --rb-black: #1A1A1A;
-  --rb-black-card: #232323;
+  --rb-black: #000000;
+  --rb-black-card: #1a1a1a;
   --rb-black-surface: #2C2C2C;
 
-  --rb-gold: #D4AF37;
-  --rb-gold-light: #F5D060;
-  --rb-gold-dark: #9E7C1F;
+  --rb-gold: #8B7D72;
+  --rb-gold-light: #a39689;
+  --rb-gold-dark: #6e6259;
 
-  /* Neutral */
-  --rb-white: #FAFAFA;
-  --rb-gray-50: #F7F6F4;
-  --rb-gray-100: #F0EFED;
-  --rb-gray-200: #D8D5D0;
-  --rb-gray-300: #B0ACA5;
-  --rb-gray-400: #8A8680;
-  --rb-gray-500: #6B6862;
-  --rb-gray-600: #4A4844;
-  --rb-gray-700: #333130;
+  /* Neutral — warm, earthy tones derived from the brand */
+  --rb-white: #FDF7F4;
+  --rb-gray-50: #F8F3EF;
+  --rb-gray-100: #F0EBE3;
+  --rb-gray-200: #D8D1C9;
+  --rb-gray-300: #B0A89E;
+  --rb-gray-400: #8B7D72;
+  --rb-gray-500: #6B6259;
+  --rb-gray-600: #4A4440;
+  --rb-gray-700: #2C2822;
 
   /* Semantic */
   --rb-success: #2E7D32;
@@ -41,7 +41,7 @@
 
   /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Spacing — 4px grid */
   --space-1: 4px;
@@ -102,7 +102,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: var(--rb-gray-700);
-  background-color: var(--rb-gray-100);
+  background-color: var(--rb-white);
   min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -154,7 +154,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250, 250, 250, 0.82);
+  background: rgba(253, 247, 244, 0.82);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border-bottom: 1px solid transparent;
@@ -250,12 +250,12 @@ button {
 }
 
 .tier-indicator--red {
-  background: linear-gradient(135deg, var(--rb-red), var(--rb-red-dark));
+  background: linear-gradient(135deg, #981b23, #6e1319);
   color: white;
 }
 
 .tier-indicator--black {
-  background: linear-gradient(135deg, #2C2C2C, #1A1A1A);
+  background: linear-gradient(135deg, #2C2C2C, #000000);
   color: var(--rb-gold);
 }
 
@@ -430,7 +430,7 @@ button {
 }
 
 .badge--tier {
-  background: linear-gradient(135deg, #2C2C2C, #1A1A1A);
+  background: linear-gradient(135deg, #2C2C2C, #000000);
   color: var(--rb-gold);
   font-size: 0.625rem;
   letter-spacing: 0.08em;
@@ -626,7 +626,7 @@ button {
   border-radius: 50%;
   background: var(--rb-red-subtle);
   margin-top: 1px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23C62828'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23981b23'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
   background-size: 12px 12px;
   background-repeat: no-repeat;
   background-position: center;
