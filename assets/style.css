@@ -4,44 +4,80 @@
    ==================================== */
 
 /* ---------- Google Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ---------- Juana Alt — self-hosted ---------- */
+@font-face {
+  font-family: 'JuanaAlt-Medium';
+  src: url('./fonts/Fontspring-DEMO-juanaalt-medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JuanaAlt-Light';
+  src: url('./fonts/Fontspring-DEMO-juanaalt-light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
-  /* Brand palette */
-  --rb-red: #C62828;
-  --rb-red-light: #EF5350;
-  --rb-red-dark: #8E0000;
-  --rb-red-glow: rgba(198, 40, 40, 0.25);
-  --rb-red-subtle: rgba(198, 40, 40, 0.06);
+  /* ── Brand Palette ── */
+  /* Primary Accent */
+  --rb-red: #981b23;
+  --rb-red-light: #c0272f;
+  --rb-red-dark: #6b1219;
+  --rb-red-glow: rgba(152, 27, 35, 0.22);
+  --rb-red-subtle: rgba(152, 27, 35, 0.07);
 
-  --rb-black: #1A1A1A;
-  --rb-black-card: #232323;
-  --rb-black-surface: #2C2C2C;
+  /* Backgrounds */
+  --rb-ivory:    #FDF7F4;   /* Ivory Petal  — primary bg   */
+  --rb-alabaster: #F0EBE3;  /* Alabaster    — secondary bg  */
 
-  --rb-gold: #D4AF37;
-  --rb-gold-light: #F5D060;
-  --rb-gold-dark: #9E7C1F;
+  /* Tertiary Accent */
+  --rb-stone: #8B7D72;      /* Warm Stone */
+  --rb-stone-light: #a89890;
+  --rb-stone-subtle: rgba(139, 125, 114, 0.10);
 
-  /* Neutral */
-  --rb-white: #FAFAFA;
-  --rb-gray-50: #F7F6F4;
-  --rb-gray-100: #F0EFED;
-  --rb-gray-200: #D8D5D0;
-  --rb-gray-300: #B0ACA5;
-  --rb-gray-400: #8A8680;
-  --rb-gray-500: #6B6862;
-  --rb-gray-600: #4A4844;
-  --rb-gray-700: #333130;
+  /* Text */
+  --rb-black: #000000;
+  --rb-black-soft: #1a1a1a;
+  --rb-black-card: #111111;
+  --rb-black-surface: #1e1e1e;
+
+  /* Neutral scale (derived from Alabaster/Ivory) */
+  --rb-white: #FFFFFF;
+  --rb-gray-50:  #FAF6F3;
+  --rb-gray-100: #F0EBE3;   /* = Alabaster */
+  --rb-gray-200: #DDD5CC;
+  --rb-gray-300: #B8ADA5;
+  --rb-gray-400: #8B7D72;   /* = Warm Stone */
+  --rb-gray-500: #6E6259;
+  --rb-gray-600: #4A4441;
+  --rb-gray-700: #2A2523;
 
   /* Semantic */
   --rb-success: #2E7D32;
   --rb-whatsapp: #25D366;
   --rb-whatsapp-dark: #128C7E;
 
-  /* Typography */
+  /* ── Typography ── */
+  /* JuanaAlt Medium — RedBeryl wordmark / header logo */
+  --font-juana-medium: 'JuanaAlt-Medium', 'Playfair Display', Georgia, serif;
+  /* JuanaAlt Light — partner names, section headings, content titles */
+  --font-juana-light:  'JuanaAlt-Light',  'Playfair Display', Georgia, serif;
+  /* Aliases for clarity in usage */
+  --font-heading:       var(--font-juana-light);   /* content headings */
+  --font-heading-brand: var(--font-juana-medium);  /* logo / brand wordmark */
+  /* Visby — website body (add @font-face when self-hosting) */
+  --font-body:    'Visby', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Playfair Display — subheadings / written creatives */
   --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Poppins — written creative body text */
+  --font-poppins: 'Poppins', 'Visby', sans-serif;
 
   /* Spacing — 4px grid */
   --space-1: 4px;
@@ -101,8 +137,8 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.6;
-  color: var(--rb-gray-700);
-  background-color: var(--rb-gray-100);
+  color: var(--rb-black-soft);
+  background-color: var(--rb-ivory);
   min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -131,6 +167,7 @@ button {
 ::selection {
   background: var(--rb-red-glow);
   color: var(--rb-black);
+  color: var(--rb-ivory);
 }
 
 /* ---------- Page Shell ---------- */
@@ -154,16 +191,16 @@ button {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250, 250, 250, 0.82);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  background: rgba(253, 247, 244, 0.88); /* Ivory Petal translucent */
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
   border-bottom: 1px solid transparent;
   padding: var(--space-3) var(--space-4);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .site-header.scrolled {
-  border-bottom-color: rgba(0, 0, 0, 0.06);
+  border-bottom-color: rgba(139, 125, 114, 0.18); /* Warm Stone subtle */
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
 }
 
@@ -216,15 +253,18 @@ button {
 }
 
 .logo-text {
-  font-family: var(--font-display);
+  font-family: var(--font-heading-brand); /* JuanaAlt-Medium — RedBeryl wordmark */
+  font-style: normal;
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: normal;
   letter-spacing: 0.12em;
-  color: var(--rb-black);
+  /* Entire "RedBeryl" wordmark is brand red */
+  color: var(--rb-red);
 }
 
+/* .logo-red span kept in markup for legacy — colour inherited from parent */
 .logo-text .logo-red {
-  color: var(--rb-red);
+  color: inherit;
 }
 
 .logo-subtitle {
@@ -256,7 +296,7 @@ button {
 
 .tier-indicator--black {
   background: linear-gradient(135deg, #2C2C2C, #1A1A1A);
-  color: var(--rb-gold);
+  color: var(--rb-stone-light);
 }
 
 .tier-indicator .dot {
@@ -279,7 +319,8 @@ button {
 }
 
 .hero-month {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
+  font-style: normal;
   font-size: 1.75rem;
   font-weight: 600;
   color: var(--rb-black);
@@ -288,8 +329,9 @@ button {
 }
 
 .hero-subtitle {
+  font-family: var(--font-poppins);
   font-size: 0.9375rem;
-  color: var(--rb-gray-400);
+  color: var(--rb-stone);
   max-width: 320px;
   margin: 0 auto;
   line-height: 1.5;
@@ -327,7 +369,7 @@ button {
 }
 
 .partner-card {
-  background: white;
+  background: var(--rb-white);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-card);
@@ -363,7 +405,7 @@ button {
 }
 
 .partner-header:hover {
-  background: var(--rb-gray-50);
+  background: var(--rb-ivory);
 }
 
 .partner-header:active {
@@ -386,7 +428,8 @@ button {
 }
 
 .partner-name {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
+  font-style: normal;
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--rb-black);
@@ -415,8 +458,8 @@ button {
 }
 
 .badge--location {
-  background: var(--rb-gray-100);
-  color: var(--rb-gray-500);
+  background: var(--rb-alabaster);
+  color: var(--rb-stone);
 }
 
 .badge--location svg {
@@ -431,7 +474,7 @@ button {
 
 .badge--tier {
   background: linear-gradient(135deg, #2C2C2C, #1A1A1A);
-  color: var(--rb-gold);
+  color: var(--rb-stone-light);
   font-size: 0.625rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -447,14 +490,14 @@ button {
   flex-shrink: 0;
   margin-left: var(--space-3);
   border-radius: 50%;
-  background: var(--rb-gray-100);
+  background: var(--rb-alabaster);
   transition: all var(--transition-med);
 }
 
 .partner-chevron svg {
   width: 18px;
   height: 18px;
-  color: var(--rb-gray-400);
+  color: var(--rb-stone);
   transition: transform var(--transition-med), color var(--transition-fast);
 }
 
@@ -545,8 +588,9 @@ button {
 
 /* Description */
 .partner-description {
+  font-family: var(--font-poppins);
   font-size: 0.9375rem;
-  color: var(--rb-gray-500);
+  color: var(--rb-stone);
   line-height: 1.7;
   margin-bottom: var(--space-5);
 }
@@ -575,13 +619,14 @@ button {
 
 /* Sub-headings for partners with grouped offers (e.g. The Tivoli) */
 .offers-subheading {
+  font-family: var(--font-display);
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--rb-gray-600);
   margin-bottom: var(--space-2);
   margin-top: var(--space-4);
   padding-bottom: var(--space-1);
-  border-bottom: 1px solid var(--rb-gray-100);
+  border-bottom: 1px solid var(--rb-alabaster);
 }
 
 .offers-subheading:first-of-type {
@@ -590,14 +635,15 @@ button {
 
 /* Offers note */
 .offers-note {
+  font-family: var(--font-poppins);
   font-size: 0.8125rem;
-  color: var(--rb-gray-400);
+  color: var(--rb-stone);
   font-style: italic;
   margin-bottom: var(--space-5);
   padding: var(--space-3);
-  background: var(--rb-gray-50);
+  background: var(--rb-alabaster);
   border-radius: var(--radius-sm);
-  border-left: 2px solid var(--rb-gray-200);
+  border-left: 2px solid var(--rb-stone-subtle);
 }
 
 .offers-list {
@@ -612,6 +658,7 @@ button {
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
+  font-family: var(--font-poppins);
   font-size: 0.875rem;
   color: var(--rb-gray-600);
   line-height: 1.55;
@@ -626,7 +673,7 @@ button {
   border-radius: 50%;
   background: var(--rb-red-subtle);
   margin-top: 1px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23C62828'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23981b23'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
   background-size: 12px 12px;
   background-repeat: no-repeat;
   background-position: center;
@@ -689,7 +736,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
+  background: var(--rb-white);
   padding: var(--space-5) var(--space-6);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
@@ -732,15 +779,17 @@ button {
 }
 
 .month-card-name {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
+  font-style: normal;
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--rb-black);
 }
 
 .month-card-count {
+  font-family: var(--font-poppins);
   font-size: 0.8125rem;
-  color: var(--rb-gray-400);
+  color: var(--rb-stone);
 }
 
 .month-card-arrow {
@@ -750,8 +799,8 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--rb-gray-100);
-  color: var(--rb-gray-400);
+  background: var(--rb-alabaster);
+  color: var(--rb-stone);
   transition: all var(--transition-fast);
 }
 
@@ -770,21 +819,24 @@ button {
 .site-footer {
   text-align: center;
   padding: var(--space-7) var(--space-4) calc(var(--space-7) + var(--safe-area-bottom));
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 1px solid rgba(139, 125, 114, 0.18); /* Warm Stone subtle */
+  background: var(--rb-alabaster);
 }
 
 .footer-logo {
-  font-family: var(--font-display);
+  font-family: var(--font-heading-brand); /* JuanaAlt-Medium — RedBeryl wordmark */
+  font-style: normal;
   font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--rb-gray-300);
+  font-weight: normal;
+  letter-spacing: 0.14em;
+  color: var(--rb-stone);
   margin-bottom: var(--space-1);
 }
 
 .footer-text {
+  font-family: var(--font-poppins);
   font-size: 0.75rem;
-  color: var(--rb-gray-300);
+  color: var(--rb-stone-light);
 }
 
 /* ---------- Empty State ---------- */
@@ -799,15 +851,16 @@ button {
 }
 
 .empty-state-title {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-size: 1.25rem;
   color: var(--rb-gray-600);
   margin-bottom: var(--space-2);
 }
 
 .empty-state-text {
+  font-family: var(--font-poppins);
   font-size: 0.875rem;
-  color: var(--rb-gray-400);
+  color: var(--rb-stone);
 }
 
 /* ---------- Animations ---------- */
@@ -919,8 +972,8 @@ button {
   }
 
   .month-card:hover .month-card-arrow {
-    background: var(--rb-gray-100);
-    color: var(--rb-gray-400);
+    background: var(--rb-alabaster);
+    color: var(--rb-stone);
     transform: none;
   }
 

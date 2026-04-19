@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="RedBeryl Partner Privileges — Exclusive dining, wellness, and lifestyle experiences for RedBeryl members.">
-  <meta name="theme-color" content="#C62828">
+  <meta name="theme-color" content="#981b23">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>RedBeryl — Partner Privileges</title>
@@ -17,11 +17,13 @@
     }
 
     .landing-logo {
-      font-family: var(--font-display);
+      font-family: var(--font-heading-brand); /* JuanaAlt-Medium — RedBeryl wordmark */
+      font-style: normal;
       font-size: 2.5rem;
-      font-weight: 700;
+      font-weight: normal;
       letter-spacing: 0.08em;
-      color: var(--rb-black);
+      /* Full "RedBeryl" wordmark in brand red */
+      color: var(--rb-red);
       margin-bottom: var(--space-3);
       opacity: 0;
       transform: translateY(12px);
@@ -29,12 +31,13 @@
     }
 
     .landing-logo .logo-red {
-      color: var(--rb-red);
+      color: inherit;
     }
 
     .landing-tagline {
+      font-family: var(--font-poppins);
       font-size: 1rem;
-      color: var(--rb-gray-400);
+      color: var(--rb-stone);
       max-width: 300px;
       margin: 0 auto;
       line-height: 1.6;
@@ -46,7 +49,7 @@
     .landing-divider {
       width: 48px;
       height: 2px;
-      background: linear-gradient(90deg, var(--rb-red), var(--rb-gold));
+      background: var(--rb-red);
       margin: var(--space-7) auto;
       border-radius: 2px;
       opacity: 0;
@@ -104,9 +107,9 @@
 
     /* Red tier card */
     .tier-card--red {
-      background: linear-gradient(135deg, #C62828 0%, #8E0000 100%);
+      background: linear-gradient(135deg, #981b23 0%, #6b1219 100%);
       color: white;
-      box-shadow: 0 8px 32px rgba(198, 40, 40, 0.25);
+      box-shadow: 0 8px 32px rgba(152, 27, 35, 0.28);
     }
 
     .tier-card--red::before {
@@ -150,7 +153,7 @@
     }
 
     .tier-card--black .tier-card-title {
-      color: var(--rb-gold-light);
+      color: var(--rb-stone-light);
     }
 
     .tier-card-arrow {
@@ -177,14 +180,15 @@
     }
 
     .tier-card--black .tier-card-arrow svg {
-      color: var(--rb-gold-light);
+      color: var(--rb-stone-light);
     }
 
     .landing-footer-note {
       text-align: center;
       padding: var(--space-4) var(--space-4) 0;
+      font-family: var(--font-poppins);
       font-size: 0.75rem;
-      color: var(--rb-gray-300);
+      color: var(--rb-stone);
       line-height: 1.5;
       opacity: 0;
       animation: fade-up 700ms var(--ease-out-expo) 750ms both;
