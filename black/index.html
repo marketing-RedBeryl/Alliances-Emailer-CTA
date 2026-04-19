@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Explore exclusive RedBeryl Black member partner privileges — elevated dining, wellness, and lifestyle experiences each month.">
+  <meta name="theme-color" content="#1A1A1A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>RedBeryl Black — Partner Privileges</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <div class="logo-container">
+          <span class="logo-text"><span class="logo-red">Red</span>Beryl</span>
+          <span class="logo-subtitle">Partner Privileges</span>
+          <span class="tier-indicator tier-indicator--black">
+            <span class="dot"></span>
+            Black Member
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-container">
+
+      <!-- Hero -->
+      <section class="hero-section">
+        <h1 class="hero-month">Your Privileges</h1>
+        <p class="hero-subtitle">Browse monthly curated experiences exclusively for Black members.</p>
+        <div class="hero-divider"></div>
+      </section>
+
+      <!-- Month Listing -->
+      <section class="month-list" id="month-list">
+
+        <a href="./april-2026/" class="month-card animate-in" id="month-april-2026">
+          <div class="month-card-left">
+            <span class="month-card-name">April 2026</span>
+            <span class="month-card-count">2 partner experiences</span>
+          </div>
+          <div class="month-card-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+            </svg>
+          </div>
+        </a>
+
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-logo">REDBERYL</div>
+      <p class="footer-text">Exclusive privileges for members</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // Sticky header shadow on scroll
+    const header = document.getElementById('site-header');
+    const observer = new IntersectionObserver(
+      ([e]) => header.classList.toggle('scrolled', !e.isIntersecting),
+      { threshold: [1], rootMargin: '-1px 0px 0px 0px' }
+    );
+    const sentinel = document.createElement('div');
+    sentinel.style.height = '1px';
+    document.body.prepend(sentinel);
+    observer.observe(sentinel);
+  </script>
+</body>
+</html>

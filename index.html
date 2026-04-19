@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="RedBeryl Partner Privileges — Exclusive dining, wellness, and lifestyle experiences for RedBeryl members.">
+  <meta name="theme-color" content="#C62828">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>RedBeryl — Partner Privileges</title>
+  <link rel="stylesheet" href="./assets/style.css">
+  <style>
+    /* Landing-specific styles */
+    .landing-hero {
+      text-align: center;
+      padding: var(--space-10) var(--space-4) var(--space-8);
+    }
+
+    .landing-logo {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--rb-black);
+      margin-bottom: var(--space-2);
+    }
+
+    .landing-logo .logo-red {
+      color: var(--rb-red);
+    }
+
+    .landing-tagline {
+      font-size: 1rem;
+      color: var(--rb-gray-400);
+      max-width: 300px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .landing-divider {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--rb-red), var(--rb-gold));
+      margin: var(--space-7) auto;
+      border-radius: 2px;
+    }
+
+    .tier-cards {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      padding-bottom: calc(var(--space-10) + var(--safe-area-bottom));
+    }
+
+    .tier-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+      min-height: 100px;
+      transition: all var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tier-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .tier-card:active {
+      transform: scale(0.97);
+    }
+
+    /* Red tier card */
+    .tier-card--red {
+      background: linear-gradient(135deg, #C62828, #8E0000);
+      color: white;
+      box-shadow: 0 8px 32px rgba(198, 40, 40, 0.25);
+    }
+
+    .tier-card--red::before {
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+    }
+
+    .tier-card--red:hover::before {
+      opacity: 1;
+    }
+
+    /* Black tier card */
+    .tier-card--black {
+      background: linear-gradient(135deg, #2C2C2C, #111);
+      color: white;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .tier-card--black::before {
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent);
+    }
+
+    .tier-card--black:hover::before {
+      opacity: 1;
+    }
+
+    .tier-card-left {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .tier-card-title {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 600;
+    }
+
+    .tier-card-subtitle {
+      font-size: 0.8125rem;
+      opacity: 0.7;
+    }
+
+    .tier-card--black .tier-card-title {
+      color: var(--rb-gold-light);
+    }
+
+    .tier-card-arrow {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      flex-shrink: 0;
+      transition: transform var(--transition-fast);
+    }
+
+    .tier-card:hover .tier-card-arrow {
+      transform: translateX(4px);
+    }
+
+    .tier-card-arrow svg {
+      width: 18px;
+      height: 18px;
+      color: white;
+    }
+
+    .tier-card--black .tier-card-arrow svg {
+      color: var(--rb-gold-light);
+    }
+
+    .landing-footer-note {
+      text-align: center;
+      padding: var(--space-6) var(--space-4) 0;
+      font-size: 0.75rem;
+      color: var(--rb-gray-300);
+      line-height: 1.5;
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      .tier-card:hover::before { opacity: 0; }
+      .tier-card:hover .tier-card-arrow { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- Main Content -->
+    <main class="page-container">
+
+      <!-- Hero -->
+      <section class="landing-hero">
+        <h1 class="landing-logo"><span class="logo-red">Red</span>Beryl</h1>
+        <p class="landing-tagline">Exclusive partner privileges curated for your membership tier.</p>
+        <div class="landing-divider"></div>
+      </section>
+
+      <!-- Tier Selection -->
+      <section class="tier-cards" id="tier-cards">
+
+        <a href="./red/" class="tier-card tier-card--red animate-in" id="select-red">
+          <div class="tier-card-left">
+            <span class="tier-card-title">Red Member</span>
+            <span class="tier-card-subtitle">Premium partner privileges</span>
+          </div>
+          <div class="tier-card-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="./black/" class="tier-card tier-card--black animate-in" id="select-black">
+          <div class="tier-card-left">
+            <span class="tier-card-title">Black Member</span>
+            <span class="tier-card-subtitle">Elevated lifestyle experiences</span>
+          </div>
+          <div class="tier-card-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+            </svg>
+          </div>
+        </a>
+
+      </section>
+
+      <p class="landing-footer-note">Select your membership tier to browse this month's partner privileges.</p>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-logo">REDBERYL</div>
+      <p class="footer-text">Exclusive privileges for members</p>
+    </footer>
+
+  </div>
+</body>
+</html>
