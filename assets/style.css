@@ -220,6 +220,10 @@ button {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 0.12em;
+  color: var(--rb-black);
+}
+
+.logo-text .logo-red {
   color: var(--rb-red);
 }
 
