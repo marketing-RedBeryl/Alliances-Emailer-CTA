@@ -1,0 +1,110 @@
+Let me look at the current partner page HTML to understand the existing accordion and WhatsApp button structure before giving you the implementation.
+
+Viewed index.html:1-606
+
+This is great — the code already has **both** mechanisms stubbed in. Let me now write a clear guide for you, and then check if there are any gaps to fix in the implementation.
+
+Looking at lines 558–589, the deep-link handling and RM logic are already implemented but have **one issue**: the `?rm=...` param is read fine, but the URL with both a query string AND a hash needs to be structured correctly — and the deep-link handler fires on `load` **after** CTA logic, which is correct. Let me verify the black page has the same script:
+
+Viewed index.html:1-755
+
+Both pages already have the full implementation. This is purely an explanation question — no code changes needed. Let me write a clear guide.
+
+---
+
+## How the deep-linking already works
+
+Both `red/april-2026/index.html` and `black/april-2026/index.html` already implement both features. Here's how to use them:
+
+---
+
+## URL structure
+
+```
+https://yourdomain.com/red/april-2026/?rm=919205268482#partner-ekaa
+```
+
+> [!IMPORTANT]
+> The `?` (query string) **must come before** the `#` (hash). Browsers strip the query string if the hash comes first.
+
+---
+
+## How each part works
+
+### `#partner-ekaa` — Opens the accordion
+
+The script at the bottom of each page (lines 558–574 in red, 708–723 in black) listens for the hash on load:
+
+```js
+window.addEventListener('load', () => {
+  const hash = window.location.hash;           // → "#partner-ekaa"
+  if (hash) {
+    const targetCard = document.querySelector(hash); // finds <article id="partner-ekaa">
+    if (targetCard && targetCard.classList.contains('partner-card')) {
+      targetCard.classList.add('visible');      // makes it appear (bypasses scroll reveal)
+      const header = targetCard.querySelector('.partner-header');
+      if (header) {
+        setTimeout(() => header.click(), 400); // opens accordion after 400ms
+      }
+    }
+  }
+});
+```
+
+Every `<article>` already has a matching `id`:
+
+| Partner | ID to use in URL |
+|---|---|
+| SOKA | `#partner-soka-bengaluru` |
+| Kylin Experience | `#partner-kylin` |
+| EKAA | `#partner-ekaa` |
+| KOMO by Kaffa | `#partner-komo` |
+| Club 19 | `#partner-club19` |
+| OutletCity Metzingen | `#partner-metzingen` |
+| Six Senses Vana | `#partner-six-senses-vana` |
+| The Tivoli *(black only)* | `#partner-tivoli` |
+| Lafayette Diamonds *(black only)* | `#partner-lafayette` |
+
+---
+
+### `?rm=919205268482` — Wires the WhatsApp button
+
+The RM logic runs immediately on page load (lines 576–589 / 725–738):
+
+```js
+const params = new URLSearchParams(window.location.search);
+const rm = params.get('rm');  // → "919205268482"
+
+document.querySelectorAll('.book-btn').forEach(btn => {
+  if (!rm) {
+    btn.style.display = 'none';   // no RM = button hidden entirely
+  } else {
+    const msg = encodeURIComponent(btn.dataset.message);
+    btn.href = `https://wa.me/${rm}?text=${msg}`;
+    // → https://wa.me/919205268482?text=Hi%2C%20I%20am%20a%20RedBeryl...
+  }
+});
+```
+
+Each button's pre-filled message is set via `data-message` in the HTML. The WhatsApp URL opens to a chat with that specific RM number and the correct restaurant's pre-filled text.
+
+---
+
+## Example links to send via email / WhatsApp
+
+```
+# Open EKAA for a specific RM
+https://yourdomain.com/red/april-2026/?rm=919205268482#partner-ekaa
+
+# Open Six Senses for a different RM
+https://yourdomain.com/red/april-2026/?rm=919198765432#partner-six-senses-vana
+
+# Black tier — Tivoli
+https://yourdomain.com/black/april-2026/?rm=919205268482#partner-tivoli
+
+# No RM (browsing mode) — buttons hidden, no hash = all collapsed
+https://yourdomain.com/red/april-2026/
+```
+
+> [!TIP]
+> Each RM sends their own personalised link with their number in `?rm=`. The member always sees the right card open and taps one button to reach their RM on WhatsApp with the right context pre-filled — zero friction.
