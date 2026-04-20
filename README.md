@@ -1,6 +1,6 @@
 # RedBeryl Partner Communications Platform
 
-This static web application serves as the exclusive portal for RedBeryl Red and Black memberships to view their monthly partner privileges and initiate WhatsApp concierge bookings.
+This static web application serves as the exclusive portal for RedBeryl Red and Black members to view their monthly partner privileges and initiate WhatsApp concierge bookings.
 
 ## 📅 How to Add a New Month & Partners
 
