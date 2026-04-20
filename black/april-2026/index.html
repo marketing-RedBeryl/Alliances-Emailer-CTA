@@ -662,14 +662,15 @@
           // Haptic feedback on supported devices
           if (navigator.vibrate) navigator.vibrate(10);
 
-          // Smooth scroll — position the card header at the top, below the sticky header
+          // Wait for the accordion animation to finish so layout is stable
+          // The CSS transition is 500ms, using 450ms covers the visual completion
           setTimeout(() => {
             const cardTop = card.getBoundingClientRect().top + window.scrollY;
             window.scrollTo({
               top: cardTop - headerHeight - 12,
               behavior: 'smooth'
             });
-          }, 120);
+          }, 450);
         }
       });
 
