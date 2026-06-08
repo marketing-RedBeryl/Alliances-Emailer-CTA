@@ -351,6 +351,14 @@
                 btn.childNodes[1].textContent = isOpen ? ' Hide locations' : ' View all locations';
             });
         })();
+
+        /* ── Disable browser back button ── */
+        (function () {
+            history.pushState(null, '', window.location.href);
+            window.addEventListener('popstate', function () {
+                history.pushState(null, '', window.location.href);
+            });
+        })();
     </script>
 </body>
 
