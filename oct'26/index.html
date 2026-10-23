@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description"
+    content="October 2026 — Exclusive RedBeryl Red and Black membership dining, hospitality and wellness privileges. Explore partner offers and book via your Relationship Manager.">
+  <meta name="theme-color" content="#981b23">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>October 2026 — RedBeryl Privileges</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    /* ── October 2026 overrides ── */
+
+    /* One page serves both tiers, so the header shows both tier pills side by side */
+    .tier-duo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-1);
+      margin-top: var(--space-1);
+    }
+
+    .tier-duo .tier-indicator {
+      margin-top: 0;
+      padding: var(--space-1) var(--space-2);
+      font-size: 0.625rem;
+      letter-spacing: 0.08em;
+    }
+
+    /* The ITC card has far more offers than the 2000px default accordion height allows */
+    .partner-card.open .partner-body {
+      max-height: 4000px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <div class="logo-container">
+          <span class="logo-text"><span class="logo-red">Red</span>Beryl</span>
+          <span class="logo-subtitle">Partner Privileges</span>
+          <div class="tier-duo">
+            <span class="tier-indicator tier-indicator--red">
+              <span class="dot"></span>
+              Red Membership
+            </span>
+            <span class="tier-indicator tier-indicator--black">
+              <span class="dot"></span>
+              Black Membership
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-container">
+
+      <!-- Hero -->
+      <section class="hero-section">
+        <h1 class="hero-month">October 2026</h1>
+        <p class="hero-subtitle">Discover this month's handpicked dining, hospitality and wellness experiences.</p>
+        <div class="hero-divider"></div>
+      </section>
+
+      <!-- Partner count -->
+      <p class="partner-count"><strong>10</strong> partner experiences this month</p>
+
+      <!-- Partners Accordion -->
+      <section class="partners-list" id="partners-list">
+
+        <!-- ─── Partner: Zetu ─── -->
+        <article class="partner-card animate-in" id="partner-zetu">
+          <div class="partner-header" role="button" tabindex="0" aria-expanded="false" aria-controls="body-zetu">
+            <div class="partner-header-left">
+              <h2 class="partner-name">Zetu</h2>
+              <div class="partner-meta">
+                <span class="badge badge--location">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  Delhi
+                </span>
+                <span class="badge badge--offers">5 offers</span>
+              </div>
+            </div>
+            <div class="partner-chevron">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="partner-body" id="body-zetu">
+            <div class="partner-content">
+              <p class="partner-description">
+                Zetu is a Sri Lankan restaurant in Mehrauli, South Delhi, built around an old banyan tree in a tropical-modernist setting. The menu celebrates island classics — from lamprais and hoppers to kottu roti — in a warm, convivial space made for sharing.
+              </p>
+              <p class="offers-heading">Exclusive Privileges</p>
+              <ul class="offers-list">
+                <li>Guaranteed reservation for groups of 4–10 guests</li>
+                <li>One welcome drink of choice per person, per visit</li>
+                <li>White tablecloth service, priority seating (based on availability) and a chef’s table visit</li>
+                <li>Exclusive, specially curated set menu, on request</li>
+                <li>Access to invitation-only VIP events</li>
+              </ul>
+              <a class="book-btn" id="cta-zetu"
+                data-message="Hi, I'm Interested in the privileges for Zetu, Delhi." target="_blank"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Book via your Lifestyle Manager
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── Partner: LifeYoga ─── -->
+        <article class="partner-card animate-in" id="partner-lifeyoga">
+          <div class="partner-header" role="button" tabindex="0" aria-expanded="false" aria-controls="body-lifeyoga">
+            <div class="partner-header-left">
+              <h2 class="partner-name">LifeYoga</h2>
+              <div class="partner-meta">
+                <span class="badge badge--location">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  Delhi
+                </span>
+                <span class="badge badge--offers">2 offers</span>
+              </div>
+            </div>
+            <div class="partner-chevron">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="partner-body" id="body-lifeyoga">
+            <div class="partner-content">
+              <p class="partner-description">
+                LifeYoga is an upscale yoga and wellness centre in Chanakyapuri, Delhi, offering a wide range of practices — from Hatha, Vinyasa and Ashtanga to Power, Sculpt, meditation and pranayama — in a serene, thoughtfully designed space.
+              </p>
+              <p class="offers-heading">Exclusive Privileges</p>
+              <p class="offers-subheading">Membership Discounts</p>
+              <ul class="offers-list">
+                <li>15% off preferential rates on 3-month, 6-month and annual (12-month) memberships</li>
+              </ul>
+              <p class="offers-subheading">Exclusive Member Events</p>
+              <ul class="offers-list">
+                <li>Complimentary attendance at LifeYoga’s members-only events — a special extension offered to the RedBeryl community</li>
+                <li>Priority mat reservations ahead of general release, held for RedBeryl members until one week before each event</li>
+              </ul>
+              <a class="book-btn" id="cta-lifeyoga"
+                data-message="Hi, I'm Interested in the privileges for LifeYoga, Delhi." target="_blank"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Book via your Lifestyle Manager
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── Partner: Nuee ─── -->
+        <article class="partner-card animate-in" id="partner-nuee">
+          <div class="partner-header" role="button" tabindex="0" aria-expanded="false" aria-controls="body-nuee">
+            <div class="partner-header-left">
+              <h2 class="partner-name">Nuee</h2>
+              <div class="partner-meta">
+                <span class="badge badge--location">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  Pune
+                </span>
+                <span class="badge badge--offers">7 offers</span>
+              </div>
+            </div>
+            <div class="partner-chevron">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="partner-body" id="body-nuee">
+            <div class="partner-content">
+              <p class="partner-description">
+                Nuee is a seasonal, farm-led fine-dining restaurant in Kalyani Nagar, Pune. Its menu evolves weekly, shaped by produce sourced directly from organic farms around Uruli Kanchan.
+              </p>
+              <p class="offers-heading">Exclusive Privileges</p>
+              <ul class="offers-list">
+                <li>25% off the total food and beverage bill, including alcoholic and non-alcoholic beverages, on every member visit</li>
+                <li>Complimentary mocktail for up to four guests on all member visits</li>
+                <li>Interactive culinary engagement with the executive chef — insights into signature dishes and personalised preparation notes</li>
+                <li>Guaranteed priority table reservation with no wait time, even during peak dining hours</li>
+                <li>A dedicated server assigned to your table for the duration of the visit</li>
+                <li>One complimentary bottle of wine or whisky on bills exceeding ₹10,000</li>
+                <li>Complimentary cake or dessert on special occasions such as birthdays and anniversaries</li>
+              </ul>
+              <a class="book-btn" id="cta-nuee"
+                data-message="Hi, I'm Interested in the privileges for Nuee, Pune." target="_blank"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Book via your Lifestyle Manager
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── Partner: Little Italy ─── -->
+        <article class="partner-card animate-in" id="partner-little-italy">
+          <div class="partner-header" role="button" tabindex="0" aria-expanded="false" aria-controls="body-little-italy">
+            <div class="partner-header-left">
+              <h2 class="partner-name">Little Italy</h2>
+              <div class="partner-meta">
+                <span class="badge badge--location">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  Pune &amp; Bengaluru
+                </span>
+                <span class="badge badge--offers">1 offer</span>
+              </div>
+            </div>
+            <div class="partner-chevron">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="partner-body" id="body-little-italy">
+            <div class="partner-content">
+              <p class="partner-description">
+                Born in Pune, Little Italy is a much-loved Italian restaurant group, known for its relaxed take on Italian comfort dining.
+              </p>
+              <p class="offers-heading">Exclusive Privileges</p>
+              <ul class="offers-list">
+                <li>Flat 15% off on the total bill — valid on à la carte food, beverages and IMFL alcohol (wherever available)</li>
+              </ul>
+              <p class="offers-note">Valid for dine-in only at participating Little Italy restaurants in Pune and Bengaluru. Not valid on existing offers, promotions or discounts; combo meals, value meals or special packages; National Holidays, 25th December, 31st December and 14th February; or any other blackout dates communicated by Little Italy from time to time.</p>
+              <a class="book-btn" id="cta-little-italy"
+                data-message="Hi, I'm Interested in the privileges for Little Italy." target="_blank"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Book via your Lifestyle Manager
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── Partner: Pique ─── -->
+        <article class="partner-card animate-in" id="partner-pique">
+          <div class="partner-header" role="button" tabindex="0" aria-expanded="false" aria-controls="body-pique">
+            <div class="partner-header-left">
+              <h2 class="partner-name">Pique</h2>
+              <div class="partner-meta">
+                <span class="badge badge--location">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  Mumbai
+                </span>
+                <span class="badge badge--offers">2 offers</span>
+              </div>
+            </div>
+            <div class="partner-chevron">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="partner-body" id="body-pique">
+            <div class="partner-content">
+              <p class="partner-description">
+                Pique is a neighbourhood wine bar at Horniman Circle in South Mumbai, inspired by the European bistro. A relaxed, all-day space pairing a monthly-refreshed wine list with sharing plates.
+              </p>
+              <p class="offers-heading">Exclusive Privileges</p>
+              <ul class="offers-list">
+                <li>25% off for groups of 4–10 guests</li>
+                <li>Complimentary dessert for groups of 4 or more guests</li>
+              </ul>
+              <a class="book-btn" id="cta-pique"
+                data-message="Hi, I'm Interested in the privileges for Pique, Mumbai." target="_blank"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Book via your Lifestyle Manager
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── Partner: LoveFools ─── -->
+        <article class="partner-card animate-in" id="partner-lovefools">
+          <div class="partner-header" role="button" tabindex="0" aria-expanded="false" aria-controls="body-lovefools">
+            <div class="partner-header-left">
+              <h2 class="partner-name">LoveFools</h2>
+              <div class="partner-meta">
+                <span class="badge badge--location">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  Mumbai &amp; Goa
+                </span>
+                <span class="badge badge--offers">6 offers</span>
+              </div>
+            </div>
+            <div class="partner-chevron">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="partner-body" id="body-lovefools">
+            <div class="partner-content">
+              <p class="partner-description">
+                LoveFools began as a supper club in 2016 and has grown into a much-loved dining destination in Bandra, Mumbai, with a beachside sibling in Goa — intimate rooms, a relaxed energy and a globally inspired menu.
+              </p>
+              <p class="offers-heading">Exclusive Privileges</p>
+              <ul class="offers-list">
+                <li>Complimentary signature amuse-bouche or petit dessert on arrival (one per table)</li>
+                <li>Priority access to reservations, including peak dining hours and weekends, subject to availability</li>
+                <li>10% off on food on a minimum bill value of ₹7,500 — valid Sunday to Thursday; excludes alcohol, tasting menus, special events and promotional menus</li>
+                <li>A ₹1,000 LoveFools dining credit for your next visit when you spend ₹12,000 or above — valid for 30 days from the date of issue; one credit per bill</li>
+                <li>First to receive invitations and priority access to curated dinners, chef’s tables, collaborations and special events</li>
+                <li>Refer a new guest to LoveFools and receive a ₹500 dining credit when they make a qualifying visit (terms apply)</li>
+              </ul>
+              <a class="book-btn" id="cta-lovefools"
+                data-message="Hi, I'm Interested in the privileges for LoveFools." target="_blank"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Book via your Lifestyle Manager
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── Partner: Bare ─── -->
+        <article class="partner-card animate-in" id="partner-bare">
+          <div class="partner-header" role="button" tabindex="0" aria-expanded="false" aria-controls="body-bare">
+            <div class="partner-header-left">
+              <h2 class="partner-name">Bare</h2>
+              <div class="partner-meta">
+                <span class="badge badge--location">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  Mumbai
+                </span>
+                <span class="badge badge--offers">3 offers</span>
+              </div>
+            </div>
+            <div class="partner-chevron">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="partner-body" id="body-bare">
+            <div class="partner-content">
+              <p class="partner-description">
+                Bare is a cocktail bar and restaurant in Worli, hidden behind a rotating gallery façade. Part art space, part collaborative kitchen, it features an 11-seat chef’s table, with menus, décor and art that change every three months.
+              </p>
+              <p class="offers-heading">Exclusive Privileges</p>
+              <ul class="offers-list">
+                <li>15% off on food and beverages, including alcohol, on weekdays</li>
+                <li>10% off on food and beverages, including alcohol, on weekends</li>
+                <li>Priority reservations for RedBeryl members</li>
+              </ul>
+              <a class="book-btn" id="cta-bare"
+                data-message="Hi, I'm Interested in the privileges for Bare, Mumbai." target="_blank"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Book via your Lifestyle Manager
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── Partner: Papi ─── -->
+        <article class="partner-card animate-in" id="partner-papi">
+          <div class="partner-header" role="button" tabindex="0" aria-expanded="false" aria-controls="body-papi">
+            <div class="partner-header-left">
+              <h2 class="partner-name">Papi</h2>
+              <div class="partner-meta">
+                <span class="badge badge--location">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  Mumbai
+                </span>
+                <span class="badge badge--offers">3 offers</span>
+              </div>
+            </div>
+            <div class="partner-chevron">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="partner-body" id="body-papi">
+            <div class="partner-content">
+              <p class="partner-description">
+                Papi is a cocktail-first bar and dining room in Bandra, just off Linking Road. Every cocktail is served on tap, alongside small plates with coastal, Latin, Mediterranean and pan-Asian influences — easing from relaxed dinner to late-night energy.
+              </p>
+              <p class="offers-heading">Exclusive Privileges</p>
+              <ul class="offers-list">
+                <li>Complimentary welcome cocktail or dessert on arrival for RedBeryl members (up to 6 guests)</li>
+                <li>One complimentary premium wine or champagne on bills of ₹10,000 and above</li>
+                <li>White-glove service, including priority reservations and guaranteed table priority</li>
+              </ul>
+              <a class="book-btn" id="cta-papi"
+                data-message="Hi, I'm Interested in the privileges for Papi, Mumbai." target="_blank"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Book via your Lifestyle Manager
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── Partner: Rambhajo ─── -->
+        <article class="partner-card animate-in" id="partner-rambhajo">
+          <div class="partner-header" role="button" tabindex="0" aria-expanded="false" aria-controls="body-rambhajo">
+            <div class="partner-header-left">
+              <h2 class="partner-name">Rambhajo</h2>
+              <div class="partner-meta">
+                <span class="badge badge--location">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  Pan-India
+                </span>
+                <span class="badge badge--offers">5 offers</span>
+              </div>
+            </div>
+            <div class="partner-chevron">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="partner-body" id="body-rambhajo">
+            <div class="partner-content">
+              <p class="partner-description">
+                Founded in Jaipur in 1921, Rambhajo is a heritage jewellery house celebrated for Kundan, Meena, Jadau, Polki and fine diamond jewellery, crafted entirely in-house.
+              </p>
+              <p class="offers-heading">Exclusive Privileges</p>
+              <ul class="offers-list">
+                <li>A white-glove experience — a seamless, personalised journey for every RedBeryl member at Rambhajo</li>
+                <li>25% off across the majority of the catalogue (subject to standard terms and specific exclusions)</li>
+                <li>Exclusive private viewings curated for members</li>
+                <li>Priority access to new collections ahead of public launch</li>
+                <li>Complimentary online video consultations for remote viewing of pieces</li>
+              </ul>
+              <p class="offers-note">The 25% discount applies to the original tag price of eligible products only and cannot be combined with any other discounts, promotions or custom pricing offered by sales personnel. The Rambhajo team will confirm which items are eligible before billing.</p>
+              <a class="book-btn" id="cta-rambhajo"
+                data-message="Hi, I'm Interested in the privileges for Rambhajo." target="_blank"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Book via your Lifestyle Manager
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── Partner: ITC Hotels ─── -->
+        <article class="partner-card animate-in" id="partner-itc">
+          <div class="partner-header" role="button" tabindex="0" aria-expanded="false" aria-controls="body-itc">
+            <div class="partner-header-left">
+              <h2 class="partner-name">ITC Hotels</h2>
+              <div class="partner-meta">
+                <span class="badge badge--location">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  Pan-India
+                </span>
+                <span class="badge badge--offers">6 offers</span>
+              </div>
+            </div>
+            <div class="partner-chevron">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="partner-body" id="body-itc">
+            <div class="partner-content">
+              <p class="partner-description">
+                ITC Hotels’ Luxury Collection brings together some of India’s most distinguished hotels, each known for signature dining, restorative spas and gracious hospitality.
+              </p>
+              <p class="offers-heading">Exclusive Privileges</p>
+              <p class="offers-subheading">Culinaire Membership · For Select Members</p>
+              <ul class="offers-list">
+                <li>2 complimentary buffet meal vouchers (each valid for 2 guests)</li>
+                <li>20% savings on Best Available Rate (1 redemption)</li>
+                <li>Group dining discount: 50% savings for up to 8 guests (2 redemptions)</li>
+                <li>40% savings on Spa (2 redemptions)</li>
+                <li>Buy 1 Get 1 on beverages, for up to 4 guests (1 redemption)</li>
+                <li>2 complimentary desserts while dining</li>
+                <li>1 complimentary celebration cake</li>
+              </ul>
+              <p class="offers-subheading">Membership &amp; Loyalty</p>
+              <ul class="offers-list">
+                <li>Complimentary Club ITC Gold Membership for the entire tenure of the RedBeryl–ITC Hotels alliance</li>
+                <li>Exclusive 20% savings on Culinaire Select and Culinaire Elite memberships, for members not enrolled in the complimentary Gold tier</li>
+              </ul>
+              <p class="offers-subheading">Stays</p>
+              <ul class="offers-list">
+                <li>25% savings on Best Available Rate on Suites at participating hotels</li>
+                <li>A house wine or champagne, once during your stay in a Suite</li>
+                <li>Valid on bookings made through the dedicated landing page on the ITC Hotels website; cannot be combined with any other offer, promotion or loyalty-programme benefit</li>
+              </ul>
+              <p class="offers-subheading">Dining</p>
+              <ul class="offers-list">
+                <li>20% savings at All-Day Dining restaurants across ITC Luxury Collection hotels</li>
+                <li>Also extended to select signature restaurants: Royal Vega, Kebab &amp; Kurries, Pan Asian (Kolkata and Chennai) and Yi Jing (Ahmedabad and Mumbai)</li>
+                <li>One complimentary set of beverages per person at participating signature dining restaurants</li>
+              </ul>
+              <p class="offers-subheading">Spa</p>
+              <ul class="offers-list">
+                <li>50% off the second spa therapy when two therapies are booked together — valid at participating ITC Luxury Collection hotels, for resident guests only</li>
+              </ul>
+              <p class="offers-subheading">Golf</p>
+              <ul class="offers-list">
+                <li>Four-ball golf at the Classic Golf Course on weekdays under a 1+1 offer: the primary member pays the applicable green fee and the accompanying player plays on a complimentary green fee waiver</li>
+              </ul>
+              <p class="offers-note">Culinaire Membership benefits are subject to the standard Club ITC programme terms and conditions.</p>
+              <a class="book-btn" id="cta-itc"
+                data-message="Hi, I'm Interested in the privileges for ITC Hotels." target="_blank"
+                rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Book via your Lifestyle Manager
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-logo">REDBERYL</div>
+      <p class="footer-text">Exclusive privileges for members</p>
+    </footer>
+
+  </div>
+
+  <script>
+    /* ── Accordion logic ── */
+    const headerEl = document.getElementById('site-header');
+    const headerHeight = headerEl ? headerEl.offsetHeight : 72;
+
+    document.querySelectorAll('.partner-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const card = header.closest('.partner-card');
+        const isOpen = card.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.partner-card.open').forEach(c => {
+          c.classList.remove('open');
+          c.querySelector('.partner-header').setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle clicked
+        if (!isOpen) {
+          card.classList.add('open');
+          header.setAttribute('aria-expanded', 'true');
+
+          // Haptic feedback on supported devices
+          if (navigator.vibrate) navigator.vibrate(10);
+
+          // Wait for the accordion animation to finish so layout is stable
+          setTimeout(() => {
+            const cardTop = card.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+              top: cardTop - headerHeight - 12,
+              behavior: 'smooth'
+            });
+          }, 450);
+        }
+      });
+
+      // Keyboard accessibility
+      header.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
+    });
+
+    /* ── Scroll-triggered reveal ── */
+    (function () {
+      const cards = document.querySelectorAll('.partner-card');
+      cards.forEach(card => {
+        card.classList.remove('animate-in');
+        card.classList.add('reveal');
+      });
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      cards.forEach((card, i) => {
+        card.style.transitionDelay = `${i * 80}ms`;
+        revealObserver.observe(card);
+      });
+    })();
+
+    /* ── Deep-link handling ── */
+    window.addEventListener('load', () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const targetCard = document.querySelector(hash);
+        if (targetCard && targetCard.classList.contains('partner-card')) {
+          targetCard.classList.add('visible');
+          const header = targetCard.querySelector('.partner-header');
+          if (header) {
+            setTimeout(() => {
+              header.click();
+            }, 400);
+          }
+        }
+      }
+    });
+
+    /* ── CTA / RM Logic ── */
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const rm = params.get('rm');
+
+      document.querySelectorAll('.book-btn').forEach(btn => {
+        if (!rm) {
+          btn.style.display = 'none';
+        } else {
+          const msg = encodeURIComponent(btn.dataset.message);
+          btn.href = `https://wa.me/${rm}?text=${msg}`;
+        }
+      });
+    })();
+
+    /* ── Sticky header shadow ── */
+    (function () {
+      const sentinel = document.createElement('div');
+      sentinel.style.height = '1px';
+      document.body.prepend(sentinel);
+
+      const observer = new IntersectionObserver(
+        ([e]) => headerEl.classList.toggle('scrolled', !e.isIntersecting),
+        { threshold: [1], rootMargin: '-1px 0px 0px 0px' }
+      );
+      observer.observe(sentinel);
+    })();
+  </script>
+</body>
+
+</html>
