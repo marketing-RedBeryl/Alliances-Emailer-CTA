@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description"
+    content="ITC Hotels, Pan India and ITC Ratnadipa, Colombo — every RedBeryl member receives complimentary Club ITC Gold Membership, plus privileges across stays, dining, spa and golf.">
+  <meta name="theme-color" content="#6b1219">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>ITC Hotels — RedBeryl Partner Privileges</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    /* ══════════════════════════════════════════════
+       ITC Hotels — single-partner landing page
+       ══════════════════════════════════════════════ */
+    :root {
+      --gold: #C2A06A;
+      --gold-light: #E6CF9F;
+      --gold-deep: #8E6E3C;
+      --gold-subtle: rgba(194, 160, 106, 0.14);
+      --ink: #1a1a1a;
+      --col: 600px;
+    }
+
+    body {
+      background: var(--rb-ivory);
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: 0 var(--space-5);
+    }
+
+    /* ── Header (transparent over hero, solid on scroll) ── */
+    .site-header.itc-header {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      background: transparent;
+      border-bottom-color: transparent;
+      transition: background var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+    }
+
+    .itc-header .logo-text,
+    .itc-header .logo-subtitle,
+    .itc-header .header-back {
+      transition: color var(--transition-med), background var(--transition-med);
+    }
+
+    .itc-header:not(.solid) {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .itc-header:not(.solid) .logo-text,
+    .itc-header:not(.solid) .logo-text .logo-red {
+      color: var(--rb-white);
+    }
+
+    .itc-header:not(.solid) .logo-subtitle {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .itc-header:not(.solid) .header-back {
+      color: var(--rb-white);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .itc-header.solid {
+      background: rgba(253, 247, 244, 0.86);
+      backdrop-filter: saturate(160%) blur(14px);
+      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    /* ══════════ HERO ══════════ */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--rb-white);
+      background:
+        radial-gradient(120% 70% at 85% 10%, rgba(194, 160, 106, 0.22), transparent 60%),
+        radial-gradient(90% 60% at 0% 100%, rgba(192, 39, 47, 0.45), transparent 65%),
+        linear-gradient(165deg, #7a1620 0%, var(--rb-red-dark) 45%, #3d0a0f 100%);
+      padding: var(--space-10) 0;
+      isolation: isolate;
+    }
+
+    /* Fine diagonal guilloché texture */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 14px);
+      mask-image: linear-gradient(to bottom, black 0%, transparent 85%);
+      -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 85%);
+      z-index: -1;
+    }
+
+    /* Slow-drifting glow */
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      top: -160px;
+      right: -200px;
+      background: radial-gradient(circle, rgba(230, 207, 159, 0.22), transparent 65%);
+      animation: drift 14s var(--ease-in-out) infinite alternate;
+      z-index: -1;
+    }
+
+    @keyframes drift {
+      to {
+        transform: translate(-90px, 120px) scale(1.15);
+      }
+    }
+
+    .hero .wrap {
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: var(--font-poppins);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .eyebrow .live {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      box-shadow: 0 0 0 0 rgba(230, 207, 159, 0.6);
+      animation: ping 2.4s var(--ease-out-expo) infinite;
+    }
+
+    @keyframes ping {
+      0% {
+        box-shadow: 0 0 0 0 rgba(230, 207, 159, 0.55);
+      }
+
+      100% {
+        box-shadow: 0 0 0 10px rgba(230, 207, 159, 0);
+      }
+    }
+
+    .hero-brand {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      font-size: 2.75rem;
+      line-height: 1.05;
+      letter-spacing: 0.01em;
+      margin: var(--space-4) 0 var(--space-2);
+    }
+
+    .hero-cross {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      font-family: var(--font-poppins);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-cross::before,
+    .hero-cross::after {
+      content: '';
+      height: 1px;
+      width: 36px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5));
+    }
+
+    .hero-cross::after {
+      transform: scaleX(-1);
+    }
+
+    /* Line-mask reveal */
+    .line {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 0.08em;
+    }
+
+    .line>span {
+      display: inline-block;
+      transform: translateY(105%);
+      animation: rise 1100ms var(--ease-out-expo) forwards;
+    }
+
+    @keyframes rise {
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fade-up 900ms var(--ease-out-expo) forwards;
+    }
+
+    /* Hero statement */
+    .hero-statement {
+      margin-top: var(--space-9);
+      font-family: var(--font-heading);
+      font-weight: 400;
+      font-size: 1.75rem;
+      line-height: 1.2;
+      color: var(--rb-white);
+    }
+
+    .hero-statement em {
+      font-style: normal;
+      color: var(--gold-light);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-2);
+      margin-top: var(--space-5);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 100px;
+      font-family: var(--font-poppins);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--rb-white);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(6px);
+    }
+
+    .pill svg {
+      width: 14px;
+      height: 14px;
+      color: var(--gold-light);
+    }
+
+    .scroll-cue {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-2);
+      margin-top: var(--space-8);
+      font-family: var(--font-poppins);
+      font-size: 0.625rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .scroll-cue i {
+      display: block;
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
+      transform-origin: top;
+      animation: cue 2.2s var(--ease-in-out) infinite;
+    }
+
+    @keyframes cue {
+      0% {
+        transform: scaleY(0);
+        opacity: 1;
+      }
+
+      60% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scaleY(1);
+        opacity: 0;
+      }
+    }
+
+    /* ══════════ SECTIONS ══════════ */
+    section.block {
+      padding: var(--space-10) 0 var(--space-4);
+    }
+
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-family: var(--font-poppins);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rb-red);
+    }
+
+    .kicker::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(152, 27, 35, 0.35), transparent);
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 1200ms var(--ease-out-expo) 200ms;
+    }
+
+    .in .kicker::after,
+    .kicker.in::after {
+      transform: scaleX(1);
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 1.15;
+      color: var(--ink);
+      margin: var(--space-3) 0 var(--space-2);
+    }
+
+    .section-title em {
+      font-style: normal;
+      color: var(--rb-red);
+    }
+
+    .section-sub {
+      font-family: var(--font-poppins);
+      font-size: 0.875rem;
+      color: var(--rb-stone);
+    }
+
+    /* Scroll reveal */
+    .rv {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 900ms var(--ease-out-expo), transform 900ms var(--ease-out-expo);
+      transition-delay: var(--d, 0ms);
+    }
+
+    .rv.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── Gold benefits grid ── */
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3);
+      margin-top: var(--space-7);
+    }
+
+    .tile {
+      position: relative;
+      background: var(--rb-white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5) var(--space-4) var(--space-4);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+      overflow: hidden;
+      transition: transform var(--transition-med), box-shadow var(--transition-med), opacity 900ms var(--ease-out-expo);
+    }
+
+    .tile::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 900ms var(--ease-out-expo) calc(var(--d, 0ms) + 250ms);
+    }
+
+    .tile.in::before {
+      transform: scaleX(1);
+    }
+
+    .tile:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .tile-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--gold-subtle);
+      color: var(--gold-deep);
+      margin-bottom: var(--space-3);
+    }
+
+    .tile-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .fig {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 2.25rem;
+      line-height: 1;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    .fig small {
+      font-size: 0.55em;
+      margin-left: 1px;
+      color: var(--gold-deep);
+    }
+
+    .fig--word {
+      font-size: 1.375rem;
+      font-style: italic;
+      color: var(--gold-deep);
+      line-height: 1.15;
+    }
+
+    .tile-label {
+      font-family: var(--font-poppins);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--rb-gray-600);
+      line-height: 1.35;
+    }
+
+    .tile-tag {
+      align-self: flex-start;
+      margin-top: var(--space-2);
+      font-family: var(--font-poppins);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--rb-stone);
+      background: var(--rb-alabaster);
+      padding: 3px 9px;
+      border-radius: 100px;
+    }
+
+    .qty {
+      position: absolute;
+      top: var(--space-4);
+      right: var(--space-4);
+      font-family: var(--font-poppins);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--gold-deep);
+      border: 1px solid rgba(142, 110, 60, 0.3);
+      border-radius: 100px;
+      padding: 2px 8px;
+    }
+
+    /* Feature tile spans two columns */
+    .tile--feature {
+      grid-column: 1 / -1;
+      background:
+        radial-gradient(120% 120% at 100% 0%, rgba(230, 207, 159, 0.35), transparent 55%),
+        linear-gradient(140deg, #fffaf0, #f6ecd9);
+      border: 1px solid rgba(194, 160, 106, 0.3);
+      flex-direction: row;
+      align-items: center;
+      gap: var(--space-4);
+      padding: var(--space-5) var(--space-9) var(--space-5) var(--space-5);
+    }
+
+    .tile--feature .tile-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0;
+      flex-shrink: 0;
+      background: var(--rb-white);
+      box-shadow: 0 6px 18px rgba(142, 110, 60, 0.18);
+    }
+
+    .tile--feature .tile-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .tile--feature .fig--word {
+      font-size: 1.5rem;
+    }
+
+    .tile--feature .tile-tag {
+      background: var(--rb-white);
+    }
+
+    .footnote {
+      margin-top: var(--space-4);
+      font-family: var(--font-poppins);
+      font-size: 0.6875rem;
+      color: var(--rb-stone-light);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footnote b {
+      font-weight: 600;
+      color: var(--gold-deep);
+      border: 1px solid rgba(142, 110, 60, 0.3);
+      border-radius: 100px;
+      padding: 0 6px;
+    }
+
+    /* ── Colombo / reach ── */
+    .reach {
+      position: relative;
+      margin-top: var(--space-7);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: linear-gradient(160deg, #1d1a18, #0f0d0c);
+      color: var(--rb-white);
+      padding: var(--space-7) var(--space-6) var(--space-6);
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .reach::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(70% 50% at 80% 80%, rgba(194, 160, 106, 0.18), transparent 70%),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 22px);
+      pointer-events: none;
+    }
+
+    .reach-map {
+      position: relative;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: var(--space-5);
+      overflow: visible;
+    }
+
+    .reach-map .arc {
+      fill: none;
+      stroke: var(--gold-light);
+      stroke-width: 1.4;
+      stroke-dasharray: 360;
+      stroke-dashoffset: 360;
+      transition: stroke-dashoffset 2200ms var(--ease-out-expo) 300ms;
+    }
+
+    .reach.in .reach-map .arc {
+      stroke-dashoffset: 0;
+    }
+
+    .reach-map .ring {
+      fill: none;
+      stroke: var(--gold-light);
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .reach.in .reach-map .ring {
+      animation: ring 2.8s var(--ease-out-expo) 2000ms infinite;
+    }
+
+    @keyframes ring {
+      0% {
+        opacity: 0.8;
+        transform: scale(0.4);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(2.6);
+      }
+    }
+
+    .reach-map .dot {
+      fill: var(--gold-light);
+    }
+
+    .reach-map .dot--end {
+      opacity: 0;
+      transition: opacity 600ms ease 1900ms;
+    }
+
+    .reach.in .reach-map .dot--end {
+      opacity: 1;
+    }
+
+    .reach-map text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      fill: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+    }
+
+    .reach-map .city {
+      fill: var(--rb-white);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    .reach-eyebrow {
+      position: relative;
+      font-family: var(--font-poppins);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .reach-title {
+      position: relative;
+      font-family: var(--font-heading);
+      font-weight: 400;
+      font-size: 1.75rem;
+      line-height: 1.2;
+      margin: var(--space-2) 0 var(--space-4);
+    }
+
+    .reach-stats {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .reach-stats div {
+      background: #171412;
+      padding: var(--space-4);
+    }
+
+    .reach-stats strong {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.125rem;
+      color: var(--rb-white);
+    }
+
+    .reach-stats span {
+      font-family: var(--font-poppins);
+      font-size: 0.6875rem;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    /* ── Pillar nav (sticky) ── */
+    .pillar-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      margin: var(--space-6) calc(var(--space-5) * -1) 0;
+      padding: var(--space-3) var(--space-5);
+      background: rgba(253, 247, 244, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .pillar-nav ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      padding: 4px;
+      background: var(--rb-alabaster);
+      border-radius: 100px;
+      position: relative;
+    }
+
+    .pillar-nav .indicator {
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      left: 4px;
+      width: calc((100% - 8px - 12px) / 4);
+      border-radius: 100px;
+      background: var(--rb-white);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transform: translateX(calc(var(--i, 0) * (100% + 4px)));
+      transition: transform 500ms var(--ease-out-expo);
+    }
+
+    .pillar-nav a {
+      position: relative;
+      z-index: 1;
+      display: block;
+      text-align: center;
+      padding: 8px 0;
+      font-family: var(--font-poppins);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--rb-stone);
+      text-decoration: none;
+      border-radius: 100px;
+      transition: color var(--transition-fast);
+    }
+
+    .pillar-nav a.active {
+      color: var(--rb-red);
+    }
+
+    /* ── Pillars ── */
+    .pillar {
+      position: relative;
+      padding-top: var(--space-8);
+      scroll-margin-top: 72px;
+    }
+
+    .pillar+.pillar {
+      margin-top: var(--space-4);
+    }
+
+    .pillar-head {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .pillar-num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.9375rem;
+      color: var(--gold-deep);
+    }
+
+    .pillar-name {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      font-size: 1.625rem;
+      color: var(--ink);
+    }
+
+    .hero-offer {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: var(--space-5);
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+      color: var(--rb-white);
+      background:
+        radial-gradient(100% 140% at 100% 0%, rgba(255, 255, 255, 0.12), transparent 50%),
+        linear-gradient(135deg, var(--rb-red), var(--rb-red-dark));
+      box-shadow: 0 18px 40px -18px rgba(107, 18, 25, 0.7);
+      overflow: hidden;
+    }
+
+    .hero-offer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.12) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 1400ms var(--ease-out-expo) 400ms;
+      pointer-events: none;
+    }
+
+    .hero-offer.in::after {
+      transform: translateX(100%);
+    }
+
+    .hero-offer .fig {
+      font-size: 3.5rem;
+      color: var(--rb-white);
+      flex-shrink: 0;
+    }
+
+    .hero-offer .fig small {
+      color: var(--gold-light);
+    }
+
+    .hero-offer .what {
+      font-family: var(--font-poppins);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .hero-offer .where {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Perk rows: icon + short phrase */
+    .perks {
+      list-style: none;
+      margin-top: var(--space-3);
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .perk {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      background: var(--rb-white);
+      border-radius: var(--radius-md);
+      padding: var(--space-3) var(--space-4);
+      box-shadow: var(--shadow-card);
+      font-family: var(--font-poppins);
+      font-size: 0.8125rem;
+      color: var(--rb-gray-600);
+      line-height: 1.4;
+    }
+
+    .perk strong {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .perk-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--rb-red-subtle);
+      color: var(--rb-red);
+    }
+
+    .perk-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .perk--gold .perk-icon {
+      background: var(--gold-subtle);
+      color: var(--gold-deep);
+    }
+
+    /* Condition chips */
+    .conds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: var(--space-3);
+    }
+
+    .cond {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-poppins);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--rb-stone);
+      padding: 5px 10px;
+      border-radius: 100px;
+      border: 1px dashed var(--rb-gray-200);
+    }
+
+    .cond svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    /* Signature restaurants */
+    .venues-label {
+      margin-top: var(--space-5);
+      font-family: var(--font-poppins);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--rb-stone);
+    }
+
+    .venues {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2);
+      margin-top: var(--space-3);
+    }
+
+    .venue {
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      background: var(--rb-white);
+      border: 1px solid var(--rb-gray-100);
+      transition: border-color var(--transition-med), transform var(--transition-med), opacity 900ms var(--ease-out-expo);
+    }
+
+    .venue:hover {
+      border-color: rgba(194, 160, 106, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .venue-name {
+      font-family: var(--font-display);
+      font-size: 1.0625rem;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    .venue-city {
+      margin-top: 4px;
+      font-family: var(--font-poppins);
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+      color: var(--rb-stone);
+    }
+
+    /* Golf 1+1 visual */
+    .golf-split {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: stretch;
+      gap: var(--space-2);
+      margin-top: var(--space-3);
+    }
+
+    .golfer {
+      background: var(--rb-white);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      box-shadow: var(--shadow-card);
+      text-align: center;
+    }
+
+    .golfer .who {
+      font-family: var(--font-poppins);
+      font-size: 0.6875rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rb-stone);
+    }
+
+    .golfer .fee {
+      margin-top: 6px;
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      color: var(--ink);
+    }
+
+    .golfer--free .fee {
+      color: var(--rb-red);
+      font-style: italic;
+    }
+
+    .golf-plus {
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--gold-deep);
+    }
+
+    /* ── Fine print ── */
+    .fine {
+      margin-top: var(--space-9);
+      border-top: 1px solid var(--rb-gray-200);
+    }
+
+    .fine summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-5) 0;
+      font-family: var(--font-poppins);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--rb-gray-600);
+    }
+
+    .fine summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .fine summary svg {
+      width: 18px;
+      height: 18px;
+      color: var(--rb-stone);
+      transition: transform var(--transition-med);
+    }
+
+    .fine[open] summary svg {
+      transform: rotate(45deg);
+    }
+
+    .fine ul {
+      list-style: none;
+      display: grid;
+      gap: var(--space-3);
+      padding-bottom: var(--space-5);
+      animation: fade-up 500ms var(--ease-out-expo);
+    }
+
+    .fine li {
+      position: relative;
+      padding-left: var(--space-5);
+      font-family: var(--font-poppins);
+      font-size: 0.75rem;
+      line-height: 1.55;
+      color: var(--rb-stone);
+    }
+
+    .fine li::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 0.55em;
+      width: 6px;
+      height: 1px;
+      background: var(--rb-stone-light);
+    }
+
+    /* ── Closing CTA ── */
+    .closing {
+      margin: var(--space-6) 0 var(--space-10);
+      text-align: center;
+      padding: var(--space-8) var(--space-4);
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(90% 80% at 50% 0%, rgba(194, 160, 106, 0.18), transparent 70%),
+        var(--rb-white);
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(194, 160, 106, 0.25);
+    }
+
+    .closing .section-title {
+      font-size: 1.625rem;
+      margin-top: var(--space-2);
+    }
+
+    .closing .book-btn {
+      margin-top: var(--space-6);
+      padding-left: var(--space-4);
+      padding-right: var(--space-4);
+      font-size: 0.875rem;
+      white-space: nowrap;
+    }
+
+    .closing-alt {
+      margin-top: var(--space-3);
+      font-family: var(--font-poppins);
+      font-size: 0.8125rem;
+      color: var(--rb-stone);
+    }
+
+    /* Floating CTA */
+    .float-cta {
+      position: fixed;
+      left: 50%;
+      bottom: calc(var(--space-4) + var(--safe-area-bottom));
+      z-index: 90;
+      width: min(calc(100% - 32px), 420px);
+      transform: translate(-50%, 140%);
+      transition: transform 600ms var(--ease-out-expo);
+    }
+
+    .float-cta.show {
+      transform: translate(-50%, 0);
+    }
+
+    .float-cta .book-btn {
+      box-shadow: 0 14px 34px -10px rgba(18, 140, 126, 0.55);
+    }
+
+    /* ── Responsive ── */
+    @media (min-width: 390px) {
+      .hero-brand {
+        font-size: 3.25rem;
+      }
+
+      .hero-statement {
+        font-size: 2rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding-top: calc(var(--space-10) * 1.5);
+      }
+
+      .hero-brand {
+        font-size: 4rem;
+      }
+
+      .hero-statement {
+        font-size: 2.375rem;
+      }
+
+      .section-title {
+        font-size: 2.375rem;
+      }
+
+      .benefit-grid {
+        gap: var(--space-4);
+      }
+
+      .tile {
+        padding: var(--space-6) var(--space-5) var(--space-5);
+      }
+
+      .hero-offer .fig {
+        font-size: 4.25rem;
+      }
+    }
+
+    @media (max-width: 359px) {
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-offer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+      }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+
+      .tile:hover,
+      .venue:hover {
+        transform: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .line>span,
+      .fade,
+      .rv {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .hero::after,
+      .scroll-cue i {
+        animation: none !important;
+      }
+
+      .reach-map .arc {
+        stroke-dashoffset: 0;
+        transition: none;
+      }
+
+      .reach-map .dot--end {
+        opacity: 1;
+      }
+
+      .tile::before,
+      .kicker::after {
+        transform: scaleX(1);
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Reusable icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M4.5 12.75l6 6 9-13.5" />
+    </symbol>
+    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+      stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 11v5M12 8h.01" />
+    </symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </symbol>
+  </svg>
+
+  <div class="page-wrapper">
+
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero" id="hero">
+      <div class="wrap">
+        <span class="eyebrow fade" style="animation-delay:100ms"><i class="live"></i> New Alliance · Now Live</span>
+
+        <h1 class="hero-brand">
+          <span class="line"><span style="animation-delay:200ms">ITC Hotels</span></span>
+        </h1>
+        <p class="hero-cross fade" style="animation-delay:450ms">Pan India &amp; Colombo</p>
+
+        <h2 class="hero-statement">
+          <span class="line"><span style="animation-delay:700ms">Complimentary</span></span>
+          <span class="line"><span style="animation-delay:820ms"><em>Club ITC Gold</em> Membership</span></span>
+        </h2>
+
+        <div class="pill-row fade" style="animation-delay:1050ms">
+          <span class="pill"><svg>
+              <use href="#i-check" />
+            </svg>Every RedBeryl member</span>
+          <span class="pill"><svg>
+              <use href="#i-check" />
+            </svg>Across all tiers</span>
+        </div>
+
+        <div class="scroll-cue fade" style="animation-delay:1400ms" aria-hidden="true">
+          Explore <i></i>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <div class="wrap">
+
+        <!-- ══════════ GOLD MEMBERSHIP BENEFITS ══════════ -->
+        <section class="block" id="gold">
+          <div class="rv">
+            <p class="kicker">Club ITC Gold</p>
+            <h2 class="section-title">What your <em>Gold</em> membership unlocks</h2>
+            <p class="section-sub">Yours from day one, at ITC Hotels.</p>
+          </div>
+
+          <div class="benefit-grid">
+
+            <div class="tile tile--feature rv" style="--d:0ms">
+              <div class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 12h18M5 12a7 7 0 0114 0M12 5V3.5M2 16h20M4 16l1 3h14l1-3" />
+                </svg></div>
+              <div>
+                <div class="fig fig--word">Complimentary buffet</div>
+                <div class="tile-label">Meal voucher for two guests</div>
+                <span class="tile-tag">2 guests</span>
+              </div>
+              <span class="qty" title="Included with membership: 2">×2</span>
+            </div>
+
+            <div class="tile rv" style="--d:80ms">
+              <div class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 20V9l9-5 9 5v11M8 20v-6h8v6M3 20h18" />
+                </svg></div>
+              <div class="fig"><span data-count="20">20</span><small>%</small></div>
+              <div class="tile-label">Savings on Best Available Rate</div>
+              <span class="qty" title="Included with membership: 1">×1</span>
+            </div>
+
+            <div class="tile rv" style="--d:160ms">
+              <div class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="8" cy="8" r="3" />
+                  <circle cx="16" cy="8" r="3" />
+                  <path d="M2 20a6 6 0 0112 0M10 20a6 6 0 0112 0" />
+                </svg></div>
+              <div class="fig"><span data-count="50">50</span><small>%</small></div>
+              <div class="tile-label">Savings on group dining</div>
+              <span class="tile-tag">Up to 8 guests</span>
+              <span class="qty" title="Included with membership: 2">×2</span>
+            </div>
+
+            <div class="tile rv" style="--d:80ms">
+              <div class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M12 21c-4-2-7-5.5-7-10 2.5 0 5 1 7 3 2-2 4.5-3 7-3 0 4.5-3 8-7 10zM12 14c0-4 1.5-7.5 0-11-1.5 3.5 0 7 0 11z" />
+                </svg></div>
+              <div class="fig"><span data-count="40">40</span><small>%</small></div>
+              <div class="tile-label">Savings on spa</div>
+              <span class="qty" title="Included with membership: 2">×2</span>
+            </div>
+
+            <div class="tile rv" style="--d:160ms">
+              <div class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 3h12l-1.5 8a4.5 4.5 0 01-9 0L6 3zM12 15.5V21M8.5 21h7" />
+                </svg></div>
+              <div class="fig">1<small>+</small>1</div>
+              <div class="tile-label">On beverages</div>
+              <span class="tile-tag">Up to 4 guests</span>
+              <span class="qty" title="Included with membership: 1">×1</span>
+            </div>
+
+            <div class="tile rv" style="--d:80ms">
+              <div class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 14h16l-2 7H6l-2-7zM6 14a6 6 0 0112 0M12 4v2" />
+                </svg></div>
+              <div class="fig fig--word">On the house</div>
+              <div class="tile-label">Desserts while dining</div>
+              <span class="qty" title="Included with membership: 2">×2</span>
+            </div>
+
+            <div class="tile rv" style="--d:160ms">
+              <div class="tile-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 21h16M5 21v-7h14v7M5 17.5c2 1 3.5-1 7 0s5-1 7 0M12 14v-3M12 8.5c-1 0-1.5-1-1.5-2S12 4 12 4s1.5 1.5 1.5 2.5-.5 2-1.5 2z" />
+                </svg></div>
+              <div class="fig fig--word">On the house</div>
+              <div class="tile-label">Celebration cake</div>
+              <span class="qty" title="Included with membership: 1">×1</span>
+            </div>
+
+          </div>
+          <p class="footnote rv"><b>×2</b> times each benefit is included</p>
+
+          <!-- ══════════ COLOMBO ══════════ -->
+          <div class="reach rv" id="reach">
+            <svg class="reach-map" viewBox="0 0 300 120" aria-hidden="true">
+              <text x="20" y="20">From</text>
+              <text class="city" x="20" y="36">Pan India</text>
+              <circle class="dot" cx="48" cy="66" r="4" />
+              <path class="arc" d="M48 66 C 110 0, 210 10, 252 82" />
+              <circle class="ring" cx="252" cy="82" r="6" stroke-width="1" />
+              <circle class="dot dot--end" cx="252" cy="82" r="4" />
+              <text x="196" y="106">To</text>
+              <text class="city" x="222" y="106">Colombo</text>
+            </svg>
+            <p class="reach-eyebrow">The alliance goes abroad</p>
+            <h3 class="reach-title">Now including ITC Ratnadipa, Colombo</h3>
+            <div class="reach-stats">
+              <div><strong>India</strong><span>ITC Hotels, Pan India</span></div>
+              <div><strong>Sri Lanka</strong><span>ITC Ratnadipa, Colombo</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════ REDBERYL PRIVILEGES ══════════ -->
+        <section class="block" id="privileges">
+          <div class="rv">
+            <p class="kicker">Exclusively RedBeryl</p>
+            <h2 class="section-title">More privileges, <em>on top</em></h2>
+            <p class="section-sub">Across stays, dining, spa and golf.</p>
+          </div>
+
+          <nav class="pillar-nav" id="pillar-nav" aria-label="Privilege categories">
+            <ul>
+              <span class="indicator" aria-hidden="true"></span>
+              <li><a href="#stays" class="active">Stays</a></li>
+              <li><a href="#dining">Dining</a></li>
+              <li><a href="#spa">Spa</a></li>
+              <li><a href="#golf">Golf</a></li>
+            </ul>
+          </nav>
+
+          <!-- 01 Stays -->
+          <article class="pillar" id="stays">
+            <div class="pillar-head rv"><span class="pillar-num">01</span>
+              <h3 class="pillar-name">Stays</h3>
+            </div>
+            <div class="hero-offer rv">
+              <div class="fig"><span data-count="25">25</span><small>%</small></div>
+              <div class="what">Savings on Suites<span class="where">On Best Available Rate, at participating
+                  hotels</span></div>
+            </div>
+            <ul class="perks">
+              <li class="perk perk--gold rv" style="--d:80ms"><span class="perk-icon"><svg viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M8 3h8l-1 7a3 3 0 01-6 0L8 3zM12 13v8M9 21h6" />
+                  </svg></span><span><strong>House wine or champagne</strong>, once per Suite stay</span></li>
+            </ul>
+            <div class="conds rv" style="--d:160ms">
+              <span class="cond"><svg>
+                  <use href="#i-info" />
+                </svg>Book via ITC Hotels' dedicated page</span>
+              <span class="cond"><svg>
+                  <use href="#i-info" />
+                </svg>Not combinable with other offers</span>
+            </div>
+          </article>
+
+          <!-- 02 Dining -->
+          <article class="pillar" id="dining">
+            <div class="pillar-head rv"><span class="pillar-num">02</span>
+              <h3 class="pillar-name">Dining</h3>
+            </div>
+            <div class="hero-offer rv">
+              <div class="fig"><span data-count="20">20</span><small>%</small></div>
+              <div class="what">Savings at All-Day Dining<span class="where">Across ITC Luxury Collection
+                  hotels</span></div>
+            </div>
+
+            <p class="venues-label rv">Also at these signature restaurants</p>
+            <div class="venues">
+              <div class="venue rv" style="--d:0ms">
+                <div class="venue-name">Royal Vega</div>
+                <div class="venue-city">Participating hotels</div>
+              </div>
+              <div class="venue rv" style="--d:80ms">
+                <div class="venue-name">Kebab &amp; Kurries</div>
+                <div class="venue-city">Participating hotels</div>
+              </div>
+              <div class="venue rv" style="--d:160ms">
+                <div class="venue-name">Pan Asian</div>
+                <div class="venue-city">Kolkata · Chennai</div>
+              </div>
+              <div class="venue rv" style="--d:240ms">
+                <div class="venue-name">Yi Jing</div>
+                <div class="venue-city">Ahmedabad · Mumbai</div>
+              </div>
+            </div>
+
+            <ul class="perks">
+              <li class="perk perk--gold rv"><span class="perk-icon"><svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 3h12l-1.5 8a4.5 4.5 0 01-9 0L6 3zM12 15.5V21M8.5 21h7" />
+                  </svg></span><span><strong>Complimentary beverages</strong>, one set per guest at signature
+                  restaurants</span></li>
+              <li class="perk rv" style="--d:80ms"><span class="perk-icon"><svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 2v3M16 2v3M3.5 9h17M5 4.5h14A1.5 1.5 0 0120.5 6v13a1.5 1.5 0 01-1.5 1.5H5A1.5 1.5 0 013.5 19V6A1.5 1.5 0 015 4.5zM9 14.5l2 2 4-4" />
+                  </svg></span><span><strong>Reservations handled</strong> by your RedBeryl Lifestyle team</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- 03 Spa -->
+          <article class="pillar" id="spa">
+            <div class="pillar-head rv"><span class="pillar-num">03</span>
+              <h3 class="pillar-name">Spa</h3>
+            </div>
+            <div class="hero-offer rv">
+              <div class="fig"><span data-count="50">50</span><small>%</small></div>
+              <div class="what">Off the second therapy<span class="where">When two therapies are booked
+                  together</span></div>
+            </div>
+            <div class="conds rv" style="--d:80ms">
+              <span class="cond"><svg>
+                  <use href="#i-info" />
+                </svg>Resident guests only</span>
+              <span class="cond"><svg>
+                  <use href="#i-info" />
+                </svg>Participating ITC Luxury Collection hotels</span>
+            </div>
+          </article>
+
+          <!-- 04 Golf -->
+          <article class="pillar" id="golf">
+            <div class="pillar-head rv"><span class="pillar-num">04</span>
+              <h3 class="pillar-name">Golf</h3>
+            </div>
+            <div class="hero-offer rv">
+              <div class="fig">1<small>+</small>1</div>
+              <div class="what">Weekday four-ball play<span class="where">At Classic Golf Course</span></div>
+            </div>
+            <div class="golf-split rv" style="--d:80ms">
+              <div class="golfer">
+                <div class="who">You</div>
+                <div class="fee">Green fee</div>
+              </div>
+              <div class="golf-plus" aria-hidden="true">+</div>
+              <div class="golfer golfer--free">
+                <div class="who">Your guest</div>
+                <div class="fee">Waived</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Fine print -->
+          <details class="fine rv">
+            <summary>Terms at a glance
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </summary>
+            <ul>
+              <li>Suite bookings must be made through the dedicated RedBeryl landing page on the ITC Hotels website.</li>
+              <li>The Suite offer cannot be combined with any other ITC Hotels or RedBeryl offer, promotion or loyalty
+                benefit.</li>
+              <li>Spa privileges are for resident guests at participating ITC Luxury Collection hotels.</li>
+              <li>Standard Club ITC Programme Terms &amp; Conditions apply (Terms of Use – ITC Hotels).</li>
+            </ul>
+          </details>
+        </section>
+
+        <!-- ══════════ CLOSING CTA ══════════ -->
+        <section class="closing rv" id="closing">
+          <p class="kicker" style="justify-content:center">Ready when you are</p>
+          <h2 class="section-title">Activate your Club ITC Gold Membership</h2>
+          <a class="book-btn" id="cta-itc-hotels"
+            data-message="Hi, I'd like to activate my complimentary Club ITC Gold Membership and know more about the ITC Hotels privileges."
+            target="_blank" rel="noopener noreferrer">
+            <svg>
+              <use href="#i-whatsapp" />
+            </svg>
+            Message your Lifestyle Manager
+          </a>
+          <p class="closing-alt">Your Lifestyle Manager will set up your membership and reservations.</p>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-logo">REDBERYL</div>
+      <p class="footer-text">Exclusive privileges for members</p>
+    </footer>
+
+  </div>
+
+  <!-- Floating CTA (appears after hero, hides at closing CTA) -->
+  <div class="float-cta" id="float-cta" aria-hidden="true">
+    <a class="book-btn" id="cta-itc-hotels-float"
+      data-message="Hi, I'd like to activate my complimentary Club ITC Gold Membership and know more about the ITC Hotels privileges."
+      target="_blank" rel="noopener noreferrer" tabindex="-1">
+      <svg>
+        <use href="#i-whatsapp" />
+      </svg>
+      Activate Club ITC Gold
+    </a>
+  </div>
+
+  <script>
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ── CTA / RM Logic ── */
+    const rm = new URLSearchParams(window.location.search).get('rm');
+    document.querySelectorAll('.book-btn').forEach(btn => {
+      if (!rm) {
+        btn.style.display = 'none'; // No RM — hide CTA entirely
+      } else {
+        btn.href = `https://wa.me/${rm}?text=${encodeURIComponent(btn.dataset.message)}`;
+      }
+    });
+
+    /* ── Header: transparent over hero, solid after ── */
+    (function () {
+      const hero = document.getElementById('hero');
+      const floatCta = document.getElementById('float-cta');
+      const closing = document.getElementById('closing');
+      let pastHero = false, atClosing = false;
+
+      const updateFloat = () => {
+        const show = rm && pastHero && !atClosing;
+        floatCta.classList.toggle('show', !!show);
+        floatCta.setAttribute('aria-hidden', show ? 'false' : 'true');
+        floatCta.querySelector('a').tabIndex = show ? 0 : -1;
+      };
+
+
+      new IntersectionObserver(([e]) => {
+        pastHero = e.boundingClientRect.bottom < window.innerHeight * 0.35;
+        updateFloat();
+      }, { threshold: [0, 0.25, 0.5, 0.75, 1] }).observe(hero);
+
+      new IntersectionObserver(([e]) => {
+        atClosing = e.isIntersecting;
+        updateFloat();
+      }, { threshold: 0.1 }).observe(closing);
+    })();
+
+    /* ── Count-up numbers ── */
+    function countUp(el) {
+      const target = +el.dataset.count;
+      if (reduceMotion) { el.textContent = target; return; }
+      const dur = 1400, t0 = performance.now();
+      const step = now => {
+        const p = Math.min((now - t0) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 4);
+        el.textContent = Math.round(target * eased);
+        if (p < 1) requestAnimationFrame(step);
+      };
+      el.textContent = '0';
+      requestAnimationFrame(step);
+    }
+
+    /* ── Scroll reveal ── */
+    (function () {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('in');
+          e.target.querySelectorAll('[data-count]').forEach(countUp);
+          io.unobserve(e.target);
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.rv').forEach(el => io.observe(el));
+    })();
+
+    /* ── Pillar nav: active state + sliding indicator ── */
+    (function () {
+      const links = [...document.querySelectorAll('.pillar-nav a')];
+      const ul = document.querySelector('.pillar-nav ul');
+      const pillars = links.map(a => document.querySelector(a.getAttribute('href')));
+      const setActive = i => {
+        links.forEach((a, j) => a.classList.toggle('active', i === j));
+        ul.style.setProperty('--i', i);
+        ul.querySelector('.indicator').style.setProperty('--i', i);
+      };
+      // Active = last pillar whose top has passed 40% of the viewport
+      // (or the last one once the page bottom is reached)
+      let ticking = false, current = -1;
+      const update = () => {
+        ticking = false;
+        const line = window.innerHeight * 0.4;
+        let i = 0;
+        pillars.forEach((p, j) => { if (p.getBoundingClientRect().top <= line) i = j; });
+        const lastTop = pillars[pillars.length - 1].getBoundingClientRect().top;
+        if (lastTop < window.innerHeight * 0.8 &&
+          window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) i = pillars.length - 1;
+        if (i !== current) { current = i; setActive(i); }
+      };
+      window.addEventListener('scroll', () => {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+      }, { passive: true });
+      update();
+    })();
+
+    /* ── Disable browser back button ── */
+    (function () {
+      history.pushState(null, '', window.location.href);
+      window.addEventListener('popstate', function () {
+        history.pushState(null, '', window.location.href);
+      });
+    })();
+  </script>
+</body>
+
+</html>
